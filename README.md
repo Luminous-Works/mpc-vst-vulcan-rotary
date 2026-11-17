@@ -93,3 +93,7 @@ animation. If ui.json changes, rerun the pipeline (delete `skins/`, build, `make
 ## License
 
 MIT.
+
+## Contact
+
+owner@luminousworksllc.com (Lumina Aerospace LLC). Reports of what works and what does not on your MPC are welcome: device, MPC OS version, what happened.
