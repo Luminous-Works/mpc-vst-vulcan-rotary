@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1000" viewBox="0 0 1000 1000">
+  <!-- VULCAN ROTARY - decal, Lumina Aerospace LLC. Space Black #0A0A0A, Latimer Amber #FFB020, steel #C8C8C8. -->
+  <!-- LESSON FROM F4 PHANTOM: never put a placement transform and an animation on the same element. A CSS transform
+       (or SMIL transform) REPLACES the transform attribute, and the art jumps to the corner. Here placement lives on
+       plain outer groups and the ONLY animated element (the rotor) carries no static transform of its own. The spin is
+       SMIL animateTransform about the local origin, and the rotor is drawn around (0,0). -->
+  <defs>
+    <radialGradient id="glow" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#FFB020" stop-opacity="0.28"/>
+      <stop offset="100%" stop-color="#FFB020" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="bore" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#000000"/>
+      <stop offset="70%" stop-color="#050505"/>
+      <stop offset="100%" stop-color="#1A1A1A"/>
+    </radialGradient>
+    <filter id="softglow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="14" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    <!-- one barrel, drawn around its own centre -->
+    <g id="barrel">
+      <circle r="40" fill="#101010" stroke="#FFB020" stroke-width="7"/>
+      <circle r="31" fill="url(#bore)" stroke="#2A2A2A" stroke-width="3"/>
+      <circle r="9" fill="#000"/>
+    </g>
+  </defs>
+
+  <rect width="1000" height="1000" fill="none"/>
+
+  <!-- shield -->
+  <path d="M 500 60 C 120 60 60 260 60 500 C 60 740 260 940 500 940 C 740 940 940 740 940 500 C 940 260 880 60 500 60 Z"
+        fill="#0A0A0A" stroke="#FFB020" stroke-width="12" stroke-linejoin="round"/>
+  <path d="M 500 72 C 140 72 72 300 72 500 C 72 700 260 884 500 884 C 740 884 928 700 928 500 C 928 300 860 72 500 72 Z"
+        fill="none" stroke="#1E1E1E" stroke-width="5"/>
+
+  <!-- glow behind the muzzle (centre 500,385) -->
+  <circle cx="500" cy="385" r="300" fill="url(#glow)" filter="url(#softglow)"/>
+
+  <!-- MUZZLE: placement on the outer group, spin on the inner one -->
+  <g transform="translate(500, 385)">
+    <!-- fixed clamp ring and muzzle shroud -->
+    <circle r="205" fill="#0D0D0D" stroke="#FFB020" stroke-width="9"/>
+    <circle r="190" fill="none" stroke="#2A2A2A" stroke-width="4"/>
+    <!-- 24 muzzle notches round the shroud -->
+    <g stroke="#FFB020" stroke-opacity="0.55" stroke-width="4">
+      <g id="notch"><line x1="0" y1="-196" x2="0" y2="-176"/></g>
+      <use href="#notch" transform="rotate(15)"/><use href="#notch" transform="rotate(30)"/><use href="#notch" transform="rotate(45)"/>
+      <use href="#notch" transform="rotate(60)"/><use href="#notch" transform="rotate(75)"/><use href="#notch" transform="rotate(90)"/>
+      <use href="#notch" transform="rotate(105)"/><use href="#notch" transform="rotate(120)"/><use href="#notch" transform="rotate(135)"/>
+      <use href="#notch" transform="rotate(150)"/><use href="#notch" transform="rotate(165)"/><use href="#notch" transform="rotate(180)"/>
+      <use href="#notch" transform="rotate(195)"/><use href="#notch" transform="rotate(210)"/><use href="#notch" transform="rotate(225)"/>
+      <use href="#notch" transform="rotate(240)"/><use href="#notch" transform="rotate(255)"/><use href="#notch" transform="rotate(270)"/>
+      <use href="#notch" transform="rotate(285)"/><use href="#notch" transform="rotate(300)"/><use href="#notch" transform="rotate(315)"/>
+      <use href="#notch" transform="rotate(330)"/><use href="#notch" transform="rotate(345)"/>
+    </g>
+    <!-- THE ROTOR: six barrels at 60 degrees, hub in the middle. This element has no static transform. -->
+    <g id="rotor">
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="1.2s" repeatCount="indefinite"/>
+      <circle r="118" fill="none" stroke="#2A2A2A" stroke-width="3"/>
+      <use href="#barrel" transform="translate(0,-118)"/>
+      <use href="#barrel" transform="rotate(60) translate(0,-118)"/>
+      <use href="#barrel" transform="rotate(120) translate(0,-118)"/>
+      <use href="#barrel" transform="rotate(180) translate(0,-118)"/>
+      <use href="#barrel" transform="rotate(240) translate(0,-118)"/>
+      <use href="#barrel" transform="rotate(300) translate(0,-118)"/>
+      <!-- hub -->
+      <polygon points="0,-42 36,-21 36,21 0,42 -36,21 -36,-21" fill="#141414" stroke="#FFB020" stroke-width="6"/>
+      <circle r="12" fill="#FFB020"/>
+    </g>
+  </g>
+
+  <!-- VULCAN -->
+  <text x="500" y="690" text-anchor="middle" font-family="'IBM Plex Mono', 'Courier New', monospace" font-size="104" font-weight="800"
+        letter-spacing="8" fill="#FFB020" style="filter: drop-shadow(0 0 6px #FFB02088);">VULCAN</text>
+  <!-- ROTARY -->
+  <text x="500" y="742" text-anchor="middle" font-family="'IBM Plex Mono', 'Courier New', monospace" font-size="42" font-weight="600"
+        letter-spacing="18" fill="#C8C8C8">ROTARY</text>
+
+  <!-- bottom band -->
+  <path d="M 100 770 Q 500 745 900 770 L 900 850 Q 500 878 100 850 Z" fill="#101010" stroke="#FFB020" stroke-width="8"/>
+  <text x="500" y="805" text-anchor="middle" font-family="'IBM Plex Mono', 'Courier New', monospace" font-size="26" font-weight="800"
+        letter-spacing="5" fill="#FFB020">LUMINA AEROSPACE LLC</text>
+  <text x="500" y="836" text-anchor="middle" font-family="'IBM Plex Mono', 'Courier New', monospace" font-size="19" font-weight="600"
+        letter-spacing="4" fill="#C8C8C8">HANGAR MATE TO F4 PHANTOM</text>
+
+  <!-- top edge machined highlight -->
+  <path d="M 60 60 Q 500 16 940 60" fill="none" stroke="#2A2A2A" stroke-width="6" stroke-linecap="round"/>
+</svg>

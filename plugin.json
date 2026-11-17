@@ -1,0 +1,17 @@
+{
+  "name": "Vulcan Rotary",
+  "manufacturer": "Lumina Aerospace LLC",
+  "version": "1.0.0",
+  "format": "vst2",
+  "kind": "effect",
+  "uid": "Lgyw",
+  "numInputs": 2,
+  "numOutputs": 2,
+  "category": "Effect",
+  "file32": "VST/vulcan-rotary-arm32.so",
+  "file64": "VST/vulcan-rotary-arm64.so",
+  "description": "Vulcan Rotary: a six-barrel rotary gate and stutter. Free, signal-powered or trigger-fired, with spool-up and wind-down, scatter, per-barrel tone and a muzzle report. Hangar mate to F4 Phantom. Lumina Aerospace LLC.",
+  "author": "Lumina Aerospace LLC",
+  "url": "",
+  "license": "MIT"
+}

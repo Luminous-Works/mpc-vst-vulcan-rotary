@@ -1,0 +1,117 @@
+{
+  "kit": {
+    "theme": "amber"
+  },
+  "pages": [
+    {
+      "name": "GUN",
+      "controls": [
+        {
+          "param": "Mode",
+          "widget": "switch"
+        },
+        {
+          "param": "Fire",
+          "widget": "switch"
+        },
+        {
+          "param": "Threshold",
+          "widget": "knob"
+        },
+        {
+          "param": "Mix",
+          "widget": "fader"
+        },
+        {
+          "param": "Sync",
+          "widget": "switch"
+        },
+        {
+          "param": "Rate",
+          "widget": "knob",
+          "visibleWhen": {
+            "param": "Sync",
+            "choice": "Off"
+          }
+        },
+        {
+          "param": "Division",
+          "widget": "slider",
+          "overlay": "menu",
+          "visibleWhen": {
+            "param": "Sync",
+            "choice": "On"
+          }
+        },
+        {
+          "param": "Output",
+          "widget": "fader"
+        },
+        {
+          "param": "Spin Up",
+          "widget": "knob"
+        },
+        {
+          "param": "Wind Down",
+          "widget": "knob"
+        },
+        {
+          "param": "Depth",
+          "widget": "knob"
+        },
+        {
+          "param": "Duty",
+          "widget": "knob"
+        },
+        {
+          "param": "Gun",
+          "widget": "slider",
+          "overlay": "menu"
+        }
+      ]
+    },
+    {
+      "name": "BARRELS",
+      "controls": [
+        {
+          "param": "Spread",
+          "widget": "knob"
+        },
+        {
+          "param": "Scatter",
+          "widget": "knob"
+        },
+        {
+          "param": "Report",
+          "widget": "knob"
+        },
+        {
+          "param": "Heat",
+          "widget": "knob"
+        },
+        {
+          "param": "Tone Mode",
+          "widget": "switch"
+        },
+        {
+          "param": "Tone",
+          "widget": "knob"
+        },
+        {
+          "param": "Reso",
+          "widget": "knob"
+        },
+        {
+          "param": "Barrel Tone",
+          "widget": "knob"
+        }
+      ]
+    }
+  ],
+  "style": {
+    "background": "ff0a0a0a",
+    "accent": "ffffb020",
+    "text": "ffc8c8c8",
+    "muted": "ff8c97a8"
+  }
+}
