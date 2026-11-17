@@ -17,7 +17,7 @@ The wet path only engages while the motor turns; at rest the audio passes throug
 
 ## Lineage
 
-*Facts below are from the Wikipedia history supplied; the M61's 6,000 rpm service rate is added from general knowledge.*
+*Facts below are from the Wikipedia history the author supplied; the M61's 6,000 rpm service rate is added from general knowledge.*
 
 - **1946** — the US Army gives General Electric a contract for "Project Vulcan", a six-barrel weapon capable of **7,200 rounds per minute**.
 - **1947** — the Air Force becomes a separate service and formally asks for a new aircraft gun. WWII had shown that fighters with centre-line weapons could hit from long range; American .50-calibre fighters (P-51, P-47) had to close in, and the 20 mm Hispano of the P-38 and P-61 fired too slowly for the jet age.
